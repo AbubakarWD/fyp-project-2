@@ -1,0 +1,205 @@
+/* ==========================================================================
+   BloodLife — Public Landing Page Styling
+   Extends design-system.css for Homepage Hero, Feature Grids & Section Layouts
+   ========================================================================== */
+
+/* Hero Section */
+.bl-hero {
+  position: relative;
+  padding: 5rem 0 4rem;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+  overflow: hidden;
+  border-bottom: 1px solid var(--bl-border);
+}
+
+.bl-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  background: var(--bl-primary-soft);
+  color: var(--bl-primary);
+  border: 1px solid var(--bl-primary-border);
+  border-radius: var(--bl-radius-pill);
+  font-size: var(--bl-fs-small);
+  font-weight: var(--bl-fw-bold);
+  margin-bottom: 1.25rem;
+}
+
+.bl-hero-title {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: var(--bl-fw-extrabold);
+  color: var(--bl-dark);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.25rem;
+}
+
+.bl-hero-title .highlight {
+  color: var(--bl-primary);
+  position: relative;
+}
+
+.bl-hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--bl-secondary);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 580px;
+}
+
+.bl-hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bl-hero-card-floating {
+  background: var(--bl-surface);
+  border: 1px solid var(--bl-border);
+  border-radius: var(--bl-radius-xl);
+  padding: 2rem;
+  box-shadow: var(--bl-shadow-lg);
+  width: 100%;
+  max-width: 440px;
+  position: relative;
+  z-index: 2;
+}
+
+.bl-hero-circle-bg {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200, 30, 30, 0.12) 0%, rgba(200, 30, 30, 0) 70%);
+  z-index: 1;
+}
+
+/* Quick Search Widget */
+.bl-search-section {
+  margin-top: -3rem;
+  position: relative;
+  z-index: 10;
+}
+
+.bl-search-card {
+  background: var(--bl-surface);
+  border: 1px solid var(--bl-border);
+  border-radius: var(--bl-radius-xl);
+  padding: 1.75rem 2rem;
+  box-shadow: var(--bl-shadow-lg);
+}
+
+/* How It Works Steps */
+.bl-step-card {
+  background: var(--bl-surface);
+  border: 1px solid var(--bl-border);
+  border-radius: var(--bl-radius-lg);
+  padding: 2rem 1.5rem;
+  height: 100%;
+  text-center: center;
+  transition: var(--bl-transition);
+  position: relative;
+}
+
+.bl-step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--bl-shadow-md);
+  border-color: var(--bl-primary-border);
+}
+
+.bl-step-number {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--bl-radius-pill);
+  background: var(--bl-primary-soft);
+  color: var(--bl-primary);
+  font-size: 1.25rem;
+  font-weight: var(--bl-fw-extrabold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  border: 2px solid var(--bl-primary-border);
+}
+
+/* Blood Groups Grid */
+.bl-group-card {
+  background: var(--bl-surface);
+  border: 1px solid var(--bl-border);
+  border-radius: var(--bl-radius-lg);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  transition: var(--bl-transition);
+  cursor: pointer;
+}
+
+.bl-group-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--bl-primary);
+  box-shadow: var(--bl-shadow-md);
+}
+
+.bl-group-badge-large {
+  font-size: 1.5rem;
+  font-weight: var(--bl-fw-extrabold);
+  width: 60px;
+  height: 60px;
+  border-radius: var(--bl-radius-md);
+  background: linear-gradient(135deg, #DC2626 0%, #991B1B 100%);
+  color: var(--bl-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.85rem;
+  box-shadow: 0 4px 10px rgba(220, 38, 38, 0.25);
+}
+
+/* Testimonial Cards */
+.bl-testimonial-card {
+  background: var(--bl-surface);
+  border: 1px solid var(--bl-border);
+  border-radius: var(--bl-radius-lg);
+  padding: 2rem 1.75rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--bl-shadow-sm);
+  transition: var(--bl-transition);
+}
+
+.bl-testimonial-card:hover {
+  box-shadow: var(--bl-shadow-md);
+  transform: translateY(-3px);
+}
+
+.bl-quote-icon {
+  font-size: 2rem;
+  color: var(--bl-primary-border);
+  margin-bottom: 0.75rem;
+}
+
+/* Emergency Banner */
+.bl-cta-banner {
+  background: linear-gradient(135deg, var(--bl-dark) 0%, var(--bl-slate) 100%);
+  border-radius: var(--bl-radius-xl);
+  padding: 3.5rem 2.5rem;
+  color: var(--bl-surface);
+  box-shadow: var(--bl-shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.bl-cta-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(220, 38, 38, 0.25) 0%, rgba(0, 0, 0, 0) 70%);
+  pointer-events: none;
+}
