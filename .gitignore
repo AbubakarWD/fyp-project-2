@@ -1,0 +1,16 @@
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Vercel deployment folder
+.vercel
+
+# Serverless logs & temporary files
+/tmp/
+*.log
+storage/*.log
+
+# Operating System Files
+.DS_Store
+Thumbs.db

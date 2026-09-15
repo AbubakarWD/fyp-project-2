@@ -14,6 +14,10 @@ class SessionHelper {
     public static function startSession(): void {
         if (session_status() === PHP_SESSION_NONE) {
             if (!headers_sent()) {
+                $savePath = sys_get_temp_dir();
+                if (@is_dir($savePath) && @is_writable($savePath)) {
+                    @session_save_path($savePath);
+                }
                 @ini_set('session.cookie_httponly', '1');
                 @ini_set('session.use_only_cookies', '1');
                 @ini_set('session.gc_maxlifetime', (string)SESSION_LIFETIME);

@@ -59,7 +59,15 @@ class FileUploadService {
         $targetDir = PUBLIC_PATH . '/uploads/avatars';
 
         if (!is_dir($targetDir)) {
-            mkdir($targetDir, 0755, true);
+            @mkdir($targetDir, 0755, true);
+        }
+
+        // Serverless compatibility: if public upload directory is read-only, write to temp dir
+        if (!is_writable($targetDir)) {
+            $targetDir = sys_get_temp_dir() . '/uploads/avatars';
+            if (!is_dir($targetDir)) {
+                @mkdir($targetDir, 0755, true);
+            }
         }
 
         $targetPath = $targetDir . '/' . $newFilename;

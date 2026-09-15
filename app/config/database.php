@@ -42,6 +42,10 @@ class Database {
                 PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES " . DB_CHARSET
             ];
 
+            if (defined('DB_SSL_CA') && !empty(DB_SSL_CA) && file_exists(DB_SSL_CA)) {
+                $options[PDO::MYSQL_ATTR_SSL_CA] = DB_SSL_CA;
+            }
+
             try {
                 self::$instance = new PDO($dsn, DB_USER, DB_PASS, $options);
             } catch (PDOException $e) {
