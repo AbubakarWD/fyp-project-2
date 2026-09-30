@@ -1,0 +1,13 @@
+<?php
+/**
+ * BloodLife — Shared Hosting Configuration Override (InfinityFree / cPanel)
+ * Rename this file to 'config.local.php' on your server and enter your hosting database credentials.
+ * DO NOT commit config.local.php to git repository.
+ */
+
+putenv("DB_HOST=sqlXXX.infinityfree.com");
+putenv("DB_PORT=3306");
+putenv("DB_NAME=epiz_XXXXXX_bloodlife");
+putenv("DB_USER=epiz_XXXXXX");
+putenv("DB_PASS=YourInfinityFreePassword");
+putenv("APP_URL=http://yourdomain.infinityfreeapp.com");

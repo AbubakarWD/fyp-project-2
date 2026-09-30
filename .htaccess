@@ -1,0 +1,38 @@
+# ==============================================================================
+# BloodLife — Apache Shared Hosting (.htaccess)
+# Compatible with InfinityFree & standard cPanel / DirectAdmin Apache servers
+# ==============================================================================
+
+# Disable directory browsing
+Options -Indexes
+
+# Set default index page
+DirectoryIndex public/index.php index.php
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Prevent direct web access to sensitive directories and config files
+    RewriteRule ^(app|database|storage|tests|views|\.env|\.git|\.github) - [F,L,NC]
+
+    # If the request is not for an existing file/directory in root, route to public/
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ public/$1 [L,QSA]
+</IfModule>
+
+# Security Headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Protect sensitive hidden files
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

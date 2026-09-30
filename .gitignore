@@ -2,6 +2,7 @@
 .env
 .env.local
 .env.*.local
+app/config/config.local.php
 
 # Vercel deployment folder
 .vercel

@@ -22,6 +22,12 @@ if (file_exists($envFile)) {
     }
 }
 
+// Load optional config.local.php for shared hosting overrides
+$localConfigFile = __DIR__ . '/config.local.php';
+if (file_exists($localConfigFile)) {
+    require_once $localConfigFile;
+}
+
 // Application Info
 define('APP_NAME', 'BloodLife');
 define('APP_TAGLINE', 'Social Blood Donation & Emergency Assistance Platform');
